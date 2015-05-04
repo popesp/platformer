@@ -10,6 +10,23 @@
       <Platform>Win32</Platform>
     </ProjectConfiguration>
   </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="src\core\game.cpp" />
+    <ClCompile Include="src\GameScreen.cpp" />
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\math\Vector2.cpp" />
+    <ClCompile Include="src\Player.cpp" />
+    <ClCompile Include="src\render\Sprite.cpp" />
+    <ClCompile Include="src\ScreenManager.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\core\game.h" />
+    <ClInclude Include="src\GameScreen.h" />
+    <ClInclude Include="src\math\Vector2.h" />
+    <ClInclude Include="src\Player.h" />
+    <ClInclude Include="src\render\Sprite.h" />
+    <ClInclude Include="src\ScreenManager.h" />
+  </ItemGroup>
   <PropertyGroup Label="Globals">
     <ProjectGuid>{05E7001D-F8A3-4B2C-9655-67254082A45B}</ProjectGuid>
     <RootNamespace>platformer</RootNamespace>
@@ -63,9 +80,6 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
-  <ItemGroup>
-    <ClCompile Include="..\src\main.cpp" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
