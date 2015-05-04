@@ -1,20 +1,32 @@
 #ifndef GAME
 #define	GAME
-#include "../Player.h"
+
+
+#include	"window.h"
+
 
 class Game
 {
 public:
 	Game();
+	~Game();
 
 	void mainloop();
 
-	~Game();
-
 private:
-	static bool running;
+	Window window;
 
-	Player player;
+	struct
+	{
+		double rendertime;
+
+		unsigned fps;
+		unsigned flags;
+	} global;
+
+
+	void update();
+	void render();
 };
 
 
