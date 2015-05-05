@@ -4,3 +4,4 @@ Release/
 *.sdf
 *.sln
 *.suo
+middleware/
