@@ -1,10 +1,25 @@
 #pragma	once
 
 
+#include	"../math/mat4f.h"
+#include	"texture.h"
+#include	"shaders/shader.h"
+
+
+#define	RENDER_MODES						3
+#define	RENDER_MODE_POINTS					0
+#define	RENDER_MODE_LINESTRIP				1
+#define	RENDER_MODE_TRIANGLES				2
+
+
 class Renderable
 {
 public:
 	float* buf_verts;
+
+	Renderable();
+	Renderable(unsigned mode, unsigned programs);
+	~Renderable();
 
 private:
 	unsigned gl_id_mode;
@@ -17,11 +32,33 @@ private:
 
 	unsigned vertsize;
 
-	
-
+	Texture* texture;
 };
+
 
 class Renderer
 {
+public:
+	static Renderer* startup();
+	static void shutdown();
 
+	void render(Renderable* rb);
+
+private:
+	static Renderer* renderer;
+
+	static const unsigned renderModes[RENDER_MODES];
+
+	Shader* wireframe;
+	Shader* ssdecal;
+	Shader* sstexture;
+
+	mat4f modelworld;
+	mat4f inv_modelworld;
+	mat4f worldview;
+	mat4f inv_worldview;
+	mat4f* projection;
+
+	Renderer();
+	~Renderer();
 };

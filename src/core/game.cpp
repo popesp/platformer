@@ -82,6 +82,9 @@ void Game::update()
 
 	screenManager->update();
 
+	printf("FPS: %d\n", global.fps);
+	printf("Render time: %f ms\n\n", global.rendertime * 1000.);
+
 	// check for window close messages
 	if (glfwWindowShouldClose(window->w))
 		global.flags |= GAME_GLOBAL_FLAG_TERMINATED;

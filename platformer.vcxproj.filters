@@ -31,6 +31,12 @@
     <Filter Include="src\render">
       <UniqueIdentifier>{da1b394c-4708-4adf-9c89-e40c5147b121}</UniqueIdentifier>
     </Filter>
+    <Filter Include="headers\render\shaders">
+      <UniqueIdentifier>{618e1e57-04ce-44f8-aefc-5183ab41241e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\render\shaders">
+      <UniqueIdentifier>{f7054db3-46bf-4f56-b421-9e4279613a33}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -60,6 +66,9 @@
     </ClCompile>
     <ClCompile Include="src\render\texture.cpp">
       <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\shaders\shader.cpp">
+      <Filter>src\render\shaders</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -98,6 +107,9 @@
     </ClInclude>
     <ClInclude Include="src\render\texture.h">
       <Filter>headers\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\shaders\shader.h">
+      <Filter>headers\render\shaders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

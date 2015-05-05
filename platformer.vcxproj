@@ -19,6 +19,7 @@
     <ClCompile Include="src\game\ScreenManager.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\render\renderer.cpp" />
+    <ClCompile Include="src\render\shaders\shader.cpp" />
     <ClCompile Include="src\render\Sprite.cpp" />
     <ClCompile Include="src\render\texture.cpp" />
   </ItemGroup>
@@ -33,6 +34,7 @@
     <ClInclude Include="src\math\vec2f.h" />
     <ClInclude Include="src\math\vec3f.h" />
     <ClInclude Include="src\render\renderer.h" />
+    <ClInclude Include="src\render\shaders\shader.h" />
     <ClInclude Include="src\render\Sprite.h" />
     <ClInclude Include="src\render\texture.h" />
   </ItemGroup>
@@ -72,6 +74,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>dependencies\glew\include;dependencies\glfw\include;dependencies\freeimage\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4350;4505;4514;4710;4820</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
@@ -90,6 +93,7 @@
       <SDLCheck>true</SDLCheck>
       <AdditionalIncludeDirectories>dependencies\glew\include;dependencies\glfw\include;dependencies\freeimage\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DisableSpecificWarnings>4350;4505;4514;4710;4711;4820</DisableSpecificWarnings>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS;_MBCS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
     </ClCompile>
     <Link>
       <GenerateDebugInformation>true</GenerateDebugInformation>
