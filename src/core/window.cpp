@@ -1,12 +1,29 @@
 #include	"window.h"
 
-Window::Window()
+#define	_USE_MATH_DEFINES
+#include	<math.h>
+
+
+#define	WINDOW_DEFAULT_GLMAJOR				3
+#define	WINDOW_DEFAULT_GLMINOR				1
+
+#define	WINDOW_DEFAULT_NEAR					0.01f
+#define	WINDOW_DEFAULT_FAR					1000.f
+
+#define	WINDOW_SETTINGS_DEFAULT_ANGLE		90.f
+#define	WINDOW_SETTINGS_DEFAULT_SAMPLES		0
+#define	WINDOW_SETTINGS_DEFAULT_FLAGS		(WINDOW_SETTINGS_FLAG_VSYNC)
+
+#define	WINDOW_ANGLECONVERT					((float)M_PI / 360.f)
+
+
+Window::Window(int width, int height, const char* title)
 {
 	WindowSettings settings;
 
 	w = NULL;
 
-	title = WINDOW_TITLE " " WINDOW_VERSION;
+	this->title = title;// WINDOW_TITLE " " WINDOW_VERSION;
 
 	gl_major = WINDOW_DEFAULT_GLMAJOR;
 	gl_minor = WINDOW_DEFAULT_GLMINOR;
@@ -14,8 +31,8 @@ Window::Window()
 	near = WINDOW_DEFAULT_NEAR;
 	far = WINDOW_DEFAULT_FAR;
 
-	settings.width = WINDOW_DEFAULT_WIDTH;
-	settings.height = WINDOW_DEFAULT_HEIGHT;
+	settings.width = width;
+	settings.height = height;
 	settings.angle = WINDOW_SETTINGS_DEFAULT_ANGLE;
 	settings.samples = WINDOW_SETTINGS_DEFAULT_SAMPLES;
 	settings.flags = WINDOW_SETTINGS_DEFAULT_FLAGS;
@@ -27,6 +44,7 @@ Window::~Window()
 {
 	glfwDestroyWindow(w);
 }
+
 
 void Window::applysettings(WindowSettings* new_settings)
 {

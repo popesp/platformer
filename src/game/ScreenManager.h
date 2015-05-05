@@ -14,6 +14,8 @@ public:
 	void back();
 	void destroy();
 
+	GameScreen* getScreen();
+
 private:
 	static ScreenManager* instance;
 	GameScreen* currentScreen;

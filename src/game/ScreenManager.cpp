@@ -50,6 +50,11 @@ void ScreenManager::setScreen(GameScreen* screen)
 	*currentScreen = *screen;
 }
 
+GameScreen* ScreenManager::getScreen()
+{
+	return currentScreen;
+}
+
 void ScreenManager::destroy()
 {
 	delete instance;

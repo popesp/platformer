@@ -9,12 +9,6 @@
 #include "../game/ScreenManager.h"
 
 
-#define	GAME_UPS							60
-#define	GAME_SPU							(1. / (double)GAME_UPS)
-
-#define	GAME_GLOBAL_FLAG_TERMINATED			0x00000001
-#define	GAME_GLOBAL_FLAG_INIT				0x00000000
-
 class Game
 {
 public:
@@ -24,7 +18,8 @@ public:
 	void mainloop();
 
 private:
-	Window window;	
+	ScreenManager* screenManager;
+	Window* window;	
 
 	struct
 	{

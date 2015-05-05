@@ -5,7 +5,7 @@ class GameScreen
 {
 public:
 	GameScreen();
-	~GameScreen();
+	virtual ~GameScreen();
 
 	virtual void init();
 	virtual void render(float dt) = 0;

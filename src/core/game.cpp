@@ -1,27 +1,38 @@
 #include	"game.h"
 
+
+#define	GAME_TITLE							"Platformer"
+#define	GAME_VERSION						"0.0.1"
+
+#define	GAME_DEFAULT_WIDTH					1280
+#define	GAME_DEFAULT_HEIGHT					800
+
+#define	GAME_UPS							60
+#define	GAME_SPU							(1. / (double)GAME_UPS)
+
+#define	GAME_GLOBAL_FLAG_TERMINATED			0x00000001
+#define	GAME_GLOBAL_FLAG_INIT				0x00000000
+
+
 Game::Game()
 {
+	GameScreen* play;
 	glfwInit();
 
-	WindowSettings settings;
-	settings.width = 1024;
-	settings.height = 768;
-	window.applysettings(&settings);
+	window = new Window(GAME_DEFAULT_WIDTH, GAME_DEFAULT_HEIGHT, GAME_TITLE " " GAME_VERSION);
+
+	screenManager = ScreenManager::getInstance();
+	play = new PlayScreen();
+	screenManager->init(play);
 }
 
 Game::~Game()
 {
-	// destroy
+	// delete
 }
 
 void Game::mainloop()
 {
-	ScreenManager screenManager = *ScreenManager::getInstance();
-	GameScreen* screen = new PlayScreen();
-	screenManager.init(screen);
-	float deltaTime = 0.f;
-
 	unsigned frames[GAME_UPS], current_update, i;
 	double time;
 
@@ -50,7 +61,7 @@ void Game::mainloop()
 				global.fps += frames[i];
 
 			// update
-			screen->update(deltaTime);
+			update();
 
 			current_update = (current_update + 1) % GAME_UPS;
 			frames[current_update] = 0;
@@ -58,7 +69,7 @@ void Game::mainloop()
 		}
 
 		// render as frequently as possible
-		screen->render(deltaTime);
+		render();
 
 		frames[current_update]++;
 	}
@@ -69,12 +80,10 @@ void Game::update()
 {
 	glfwPollEvents();
 
-	// ESC to quit
-	if (glfwGetKey(window.w, GLFW_KEY_ESCAPE) == GLFW_PRESS)
-		global.flags |= GAME_GLOBAL_FLAG_TERMINATED;
+	screenManager->getScreen()->update(0.f);
 
 	// check for window close messages
-	if (glfwWindowShouldClose(window.w))
+	if (glfwWindowShouldClose(window->w))
 		global.flags |= GAME_GLOBAL_FLAG_TERMINATED;
 }
 
@@ -85,8 +94,10 @@ void Game::render()
 
 	glClear(GL_COLOR_BUFFER_BIT);
 
+	screenManager->getScreen()->render(0.f);
+
 	// end render timer
 	global.rendertime += glfwGetTime();
 
-	glfwSwapBuffers(window.w);
+	glfwSwapBuffers(window->w);
 }
