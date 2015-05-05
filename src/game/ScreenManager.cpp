@@ -1,22 +1,28 @@
 #include "ScreenManager.h"
-ScreenManager* ScreenManager::instance;
 
-ScreenManager::ScreenManager()
-{
 
-}
+ScreenManager* ScreenManager::instance = NULL;
+
 
 ScreenManager* ScreenManager::getInstance()
 {
-	if (ScreenManager::instance == NULL)
-		ScreenManager::instance = new ScreenManager();
-	return ScreenManager::instance;
+	if (instance == NULL)
+		instance = new ScreenManager();
+
+	return instance;
 }
+
 
 void ScreenManager::init(GameScreen* screen)
 {
 	currentScreen = screen;
 }
+
+void ScreenManager::destroy()
+{
+	delete instance;
+}
+
 
 //navigate and push the old current screen onto the stack
 void ScreenManager::navigate(GameScreen* screen)
@@ -45,17 +51,19 @@ void ScreenManager::back()
 	screenStack.pop();		//TODO: make sure this doesn't cause a memory leak
 }
 
+
+void ScreenManager::update()
+{
+	currentScreen->update();
+}
+
+void ScreenManager::render()
+{
+	currentScreen->render();
+}
+
+
 void ScreenManager::setScreen(GameScreen* screen)
 {
 	*currentScreen = *screen;
-}
-
-GameScreen* ScreenManager::getScreen()
-{
-	return currentScreen;
-}
-
-void ScreenManager::destroy()
-{
-	delete instance;
 }

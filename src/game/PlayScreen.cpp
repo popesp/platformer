@@ -10,12 +10,12 @@ PlayScreen::~PlayScreen()
 
 }
 
-void PlayScreen::render(float dt)
+void PlayScreen::render()
 {
-	(void)dt;
+
 }
 
-void PlayScreen::update(float dt)
+void PlayScreen::update()
 {
-	(void)dt;
+
 }

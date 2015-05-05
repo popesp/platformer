@@ -8,20 +8,21 @@ public:
 	static ScreenManager* getInstance();
 
 	void init(GameScreen* screen);
+	void destroy();
+
 	void navigate(GameScreen* screen);
 	void navigateAndReplace(GameScreen* screen);
 	void navigateAndClear(GameScreen* screen);
 	void back();
-	void destroy();
 
-	GameScreen* getScreen();
+	void update();
+	void render();
 
 private:
 	static ScreenManager* instance;
+
 	GameScreen* currentScreen;
 	std::stack<GameScreen*> screenStack;
 
-	ScreenManager();
 	void setScreen(GameScreen* screen);
 };
-

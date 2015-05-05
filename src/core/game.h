@@ -1,4 +1,5 @@
-#pragma once
+#pragma	once
+
 
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
@@ -18,6 +19,7 @@ public:
 	void mainloop();
 
 private:
+	//Renderer* renderer;
 	ScreenManager* screenManager;
 	Window* window;	
 

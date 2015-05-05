@@ -80,7 +80,7 @@ void Game::update()
 {
 	glfwPollEvents();
 
-	screenManager->getScreen()->update(0.f);
+	screenManager->update();
 
 	// check for window close messages
 	if (glfwWindowShouldClose(window->w))
@@ -94,7 +94,7 @@ void Game::render()
 
 	glClear(GL_COLOR_BUFFER_BIT);
 
-	screenManager->getScreen()->render(0.f);
+	screenManager->render();
 
 	// end render timer
 	global.rendertime += glfwGetTime();

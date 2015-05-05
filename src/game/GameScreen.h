@@ -8,8 +8,8 @@ public:
 	virtual ~GameScreen();
 
 	virtual void init();
-	virtual void render(float dt) = 0;
-	virtual void update(float dt) = 0;
+	virtual void render() = 0;
+	virtual void update() = 0;
 	virtual void pause();
 	virtual void destroy();
 	int a = 0;

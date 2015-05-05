@@ -5,7 +5,7 @@ class PlayScreen :	public GameScreen
 public:
 	PlayScreen();
 	~PlayScreen();
-	void render(float dt);
-	void update(float dt);
+	void render();
+	void update();
 };
 

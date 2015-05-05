@@ -55,6 +55,12 @@
     <ClCompile Include="src\render\Sprite.cpp">
       <Filter>src\render</Filter>
     </ClCompile>
+    <ClCompile Include="src\render\renderer.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\texture.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\game.h">
@@ -86,6 +92,12 @@
     </ClInclude>
     <ClInclude Include="src\core\window.h">
       <Filter>headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\renderer.h">
+      <Filter>headers\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\texture.h">
+      <Filter>headers\render</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
