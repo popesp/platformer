@@ -1,9 +1,19 @@
-#ifndef GAME
-#define	GAME
+#pragma once
+
+#include <GL/glew.h>
+#include <GLFW/glfw3.h>
+
+#include "window.h"
+#include "../game/GameScreen.h"
+#include "../game/PlayScreen.h"
+#include "../game/ScreenManager.h"
 
 
-#include	"window.h"
+#define	GAME_UPS							60
+#define	GAME_SPU							(1. / (double)GAME_UPS)
 
+#define	GAME_GLOBAL_FLAG_TERMINATED			0x00000001
+#define	GAME_GLOBAL_FLAG_INIT				0x00000000
 
 class Game
 {
@@ -14,7 +24,7 @@ public:
 	void mainloop();
 
 private:
-	Window window;
+	Window window;	
 
 	struct
 	{
@@ -28,6 +38,3 @@ private:
 	void update();
 	void render();
 };
-
-
-#endif

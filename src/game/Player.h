@@ -1,6 +1,6 @@
 #pragma once
-#include "math/Vector2.h"
-#include "render/Sprite.h"
+#include "../math/vec2f.h"
+#include "../render/Sprite.h"
 
 class Player
 {
@@ -8,7 +8,7 @@ public:
 	Player();
 	~Player();
 
-	Vector2 position;
+	vec2f position;
 	Sprite sprite;
 };
 

@@ -1,20 +1,13 @@
 #include	"game.h"
 
-#include	<GL/glew.h>
-#include	<GLFW/glfw3.h>
-
-
-#define	GAME_UPS							60
-#define	GAME_SPU							(1. / (double)GAME_UPS)
-
-#define	GAME_GLOBAL_FLAG_TERMINATED			0x00000001
-#define	GAME_GLOBAL_FLAG_INIT				0x00000000
-
-
 Game::Game()
 {
 	glfwInit();
-	// init
+
+	WindowSettings settings;
+	settings.width = 1024;
+	settings.height = 768;
+	window.applysettings(&settings);
 }
 
 Game::~Game()
@@ -22,14 +15,17 @@ Game::~Game()
 	// destroy
 }
 
-
 void Game::mainloop()
 {
+	ScreenManager screenManager = *ScreenManager::getInstance();
+	GameScreen* screen = new PlayScreen();
+	screenManager.init(screen);
+	float deltaTime = 0.f;
+
 	unsigned frames[GAME_UPS], current_update, i;
 	double time;
 
-	
-	// initialize frames array
+	//initialize frames array
 	for (i = 0; i < GAME_UPS; i++)
 		frames[i] = 0;
 
@@ -40,7 +36,7 @@ void Game::mainloop()
 	// loop until terminated
 	current_update = 0;
 	while (!(global.flags & GAME_GLOBAL_FLAG_TERMINATED))
-	{
+	{		
 		// get elapsed time and reset the timer
 		time += glfwGetTime();
 		glfwSetTime(0.);
@@ -54,14 +50,16 @@ void Game::mainloop()
 				global.fps += frames[i];
 
 			// update
-			update();
+			screen->update(deltaTime);
+
 			current_update = (current_update + 1) % GAME_UPS;
 			frames[current_update] = 0;
 			time -= GAME_SPU;
 		}
 
 		// render as frequently as possible
-		render();
+		screen->render(deltaTime);
+
 		frames[current_update]++;
 	}
 }

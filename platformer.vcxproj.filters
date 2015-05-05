@@ -19,30 +19,73 @@
     <Filter Include="headers\math">
       <UniqueIdentifier>{59bb92ff-336d-4538-b993-b6e0cb57d3a1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{2ffc948d-43f0-4629-95b2-a1db8531b5ab}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\game">
+      <UniqueIdentifier>{ce8890f6-b22e-4fb1-91b9-5c08b5c164eb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\render">
+      <UniqueIdentifier>{f6d41701-a022-48c1-b7ac-f441d9ed53c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\render">
+      <UniqueIdentifier>{da1b394c-4708-4adf-9c89-e40c5147b121}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\core\game.cpp">
       <Filter>src\core</Filter>
     </ClCompile>
-    <ClCompile Include="src\Player.cpp" />
-    <ClCompile Include="src\math\Vector2.cpp">
-      <Filter>src\math</Filter>
+    <ClCompile Include="src\core\window.cpp">
+      <Filter>src\core</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\Sprite.cpp" />
-    <ClCompile Include="src\GameScreen.cpp" />
-    <ClCompile Include="src\ScreenManager.cpp" />
+    <ClCompile Include="src\game\ScreenManager.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\GameScreen.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Player.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\PlayScreen.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\Sprite.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\game.h">
       <Filter>headers\core</Filter>
     </ClInclude>
-    <ClInclude Include="src\Player.h" />
-    <ClInclude Include="src\math\Vector2.h">
+    <ClInclude Include="src\core\window.h">
+      <Filter>src\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\GameScreen.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Player.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\PlayScreen.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\ScreenManager.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vec3f.h">
       <Filter>headers\math</Filter>
     </ClInclude>
-    <ClInclude Include="src\render\Sprite.h" />
-    <ClInclude Include="src\GameScreen.h" />
-    <ClInclude Include="src\ScreenManager.h" />
+    <ClInclude Include="src\math\mat4f.h">
+      <Filter>headers\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vec2f.h">
+      <Filter>headers\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\Sprite.h">
+      <Filter>headers\render</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
