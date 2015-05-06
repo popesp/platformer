@@ -2,7 +2,7 @@
 
 PlayScreen::PlayScreen()
 {
-	a = 1;
+
 }
 
 PlayScreen::~PlayScreen()
