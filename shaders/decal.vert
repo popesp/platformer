@@ -2,10 +2,10 @@
 
 
 in		vec2		vertpos;
-in		vec3		vertcol;
+in		vec4		vertcol;
 in		vec2		verttex;
 
-out		vec3		pass_vertcol;
+out		vec4		pass_vertcol;
 out		vec2		pass_verttex;
 
 uniform	mat3		transform;

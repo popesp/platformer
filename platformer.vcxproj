@@ -54,10 +54,10 @@
     <ClInclude Include="src\render\texture.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="shaders\ssdecal.frag" />
-    <None Include="shaders\ssdecal.vert" />
-    <None Include="shaders\sstexture.frag" />
-    <None Include="shaders\sstexture.vert" />
+    <None Include="shaders\decal.frag" />
+    <None Include="shaders\decal.vert" />
+    <None Include="shaders\texture.frag" />
+    <None Include="shaders\texture.vert" />
     <None Include="shaders\wireframe.frag" />
     <None Include="shaders\wireframe.vert" />
   </ItemGroup>

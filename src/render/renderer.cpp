@@ -63,7 +63,7 @@ void Renderable::allocate(unsigned num_verts)
 
 	// reallocate client-side vertex buffer
 	delete[] buf_verts;
-	buf_verts = new float[num_verts * vertsize];
+	ptr_verts = buf_verts = new float[num_verts * vertsize];
 
 	// allocate opengl vertex buffer
 	glBindBuffer(GL_ARRAY_BUFFER, gl_id_vbo);
@@ -90,6 +90,31 @@ unsigned Renderable::getVAO()
 unsigned Renderable::getNumVerts()
 {
 	return num_verts;
+}
+
+
+void Renderable::vertpos(float x, float y)
+{
+	vec2f_set(ptr_verts, x, y);
+	ptr_verts += attribSize[SHADER_ATTRIB_POS];
+}
+
+void Renderable::vertcol(float r, float g, float b, float a)
+{
+	vec3f_set(ptr_verts, r, g, b);
+	ptr_verts[3] = a;
+	ptr_verts += attribSize[SHADER_ATTRIB_COL];
+}
+
+void Renderable::verttex(float u, float v)
+{
+	vec2f_set(ptr_verts, u, v);
+	ptr_verts += attribSize[SHADER_ATTRIB_TEX];
+}
+
+void Renderable::resetBuffer()
+{
+	ptr_verts = buf_verts;
 }
 
 
@@ -137,9 +162,9 @@ void Renderer::render(Renderable* rb)
 Renderer::Renderer()
 {
 	// initialize shader programs
-	wireframe = new Shader("wireframe", SHADER_ATTRIB_POS | SHADER_ATTRIB_COL, SHADER_UNIFORM_TRANSFORM);
-	decal = new Shader("decal", SHADER_ATTRIB_POS | SHADER_ATTRIB_COL | SHADER_ATTRIB_TEX, SHADER_UNIFORM_TRANSFORM | SHADER_UNIFORM_TEXTURE);
-	texture = new Shader("texture", SHADER_ATTRIB_POS | SHADER_ATTRIB_TEX, SHADER_UNIFORM_TRANSFORM | SHADER_UNIFORM_TEXTURE);
+	wireframe = new Shader("wireframe", SHADER_ATTRIBFLAG_POS | SHADER_ATTRIBFLAG_COL, SHADER_UNIFORMFLAG_TRANSFORM);
+	decal = new Shader("decal", SHADER_ATTRIBFLAG_POS | SHADER_ATTRIBFLAG_COL | SHADER_ATTRIBFLAG_TEX, SHADER_UNIFORMFLAG_TRANSFORM | SHADER_UNIFORMFLAG_TEXTURE);
+	texture = new Shader("texture", SHADER_ATTRIBFLAG_POS | SHADER_ATTRIBFLAG_TEX, SHADER_UNIFORMFLAG_TRANSFORM | SHADER_UNIFORMFLAG_TEXTURE);
 
 	mat3f_identity(modelworld);
 	mat3f_identity(inv_modelworld);

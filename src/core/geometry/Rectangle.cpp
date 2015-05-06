@@ -44,17 +44,17 @@ void Rectangle::calculatePoints()
 	float x = position[X];
 	float y = position[Y];
 
-	points.push_back(x);
-	points.push_back(y);
+	points.push_back(x - width / 2.f);
+	points.push_back(y - height / 2.f);
 
-	points.push_back(x + width);
-	points.push_back(y);
+	points.push_back(x + width / 2.f);
+	points.push_back(y - height / 2.f);
 
-	points.push_back(x + width);
-	points.push_back(y - height);
+	points.push_back(x + width / 2.f);
+	points.push_back(y + height / 2.f);
 
-	points.push_back(x);
-	points.push_back(y - height);
+	points.push_back(x - width / 2.f);
+	points.push_back(y + height / 2.f);
 }
 
 

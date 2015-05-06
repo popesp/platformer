@@ -120,22 +120,22 @@
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="shaders\ssdecal.frag">
-      <Filter>shaders</Filter>
-    </None>
-    <None Include="shaders\ssdecal.vert">
-      <Filter>shaders</Filter>
-    </None>
-    <None Include="shaders\sstexture.frag">
-      <Filter>shaders</Filter>
-    </None>
-    <None Include="shaders\sstexture.vert">
-      <Filter>shaders</Filter>
-    </None>
     <None Include="shaders\wireframe.frag">
       <Filter>shaders</Filter>
     </None>
     <None Include="shaders\wireframe.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\decal.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\decal.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\texture.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\texture.vert">
       <Filter>shaders</Filter>
     </None>
   </ItemGroup>

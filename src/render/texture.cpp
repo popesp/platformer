@@ -28,9 +28,8 @@ Texture::Texture()
 }
 
 Texture::Texture(unsigned width, unsigned height)
+	: Texture()
 {
-	Texture::Texture();
-
 	this->width = width;
 	this->height = height;
 

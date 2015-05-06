@@ -2,6 +2,8 @@
 
 
 #include	"../math/mat3f.h"
+#include	"../math/vec2f.h"
+#include	"../math/vec3f.h"
 #include	"shader.h"
 #include	"texture.h"
 
@@ -36,10 +38,16 @@ public:
 	unsigned getVAO();
 	unsigned getNumVerts();
 
-private:
+	void vertpos(float x, float y);
+	void vertcol(float r, float g, float b, float a);
+	void verttex(float u, float v);
+	void resetBuffer();
+
+protected:
 	static void initAttrib(unsigned attrib, int size, unsigned vertsize, int offs);
 
 	float* buf_verts;
+	float* ptr_verts;
 
 	unsigned gl_id_mode;
 	unsigned gl_id_vao;
