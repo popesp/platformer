@@ -31,12 +31,6 @@
     <Filter Include="src\render">
       <UniqueIdentifier>{da1b394c-4708-4adf-9c89-e40c5147b121}</UniqueIdentifier>
     </Filter>
-    <Filter Include="headers\render\shaders">
-      <UniqueIdentifier>{618e1e57-04ce-44f8-aefc-5183ab41241e}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="src\render\shaders">
-      <UniqueIdentifier>{f7054db3-46bf-4f56-b421-9e4279613a33}</UniqueIdentifier>
-    </Filter>
     <Filter Include="shaders">
       <UniqueIdentifier>{377f21b3-4e49-46e1-9a46-c09c2d49fa05}</UniqueIdentifier>
     </Filter>
@@ -70,8 +64,8 @@
     <ClCompile Include="src\render\texture.cpp">
       <Filter>src\render</Filter>
     </ClCompile>
-    <ClCompile Include="src\render\shaders\shader.cpp">
-      <Filter>src\render\shaders</Filter>
+    <ClCompile Include="src\render\shader.cpp">
+      <Filter>src\render</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -111,11 +105,11 @@
     <ClInclude Include="src\render\texture.h">
       <Filter>headers\render</Filter>
     </ClInclude>
-    <ClInclude Include="src\render\shaders\shader.h">
-      <Filter>headers\render\shaders</Filter>
-    </ClInclude>
     <ClInclude Include="src\math\mat3f.h">
       <Filter>headers\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\shader.h">
+      <Filter>headers\render</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

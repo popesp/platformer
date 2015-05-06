@@ -47,6 +47,12 @@ Texture::~Texture()
 }
 
 
+unsigned Texture::getGLID()
+{
+	return gl_id;
+}
+
+
 Texture* Texture::solidDiffuse(unsigned char r, unsigned char g, unsigned char b, unsigned char a)
 {
 	Texture* texture;

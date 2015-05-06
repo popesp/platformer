@@ -3,7 +3,6 @@
 
 #include	"../math/mat3f.h"
 #include	"texture.h"
-#include	"shaders/shader.h"
 
 
 #define	RENDER_MODES						3
@@ -11,11 +10,22 @@
 #define	RENDER_MODE_LINESTRIP				1
 #define	RENDER_MODE_TRIANGLES				2
 
+#define	RENDER_PROGRAMS						3
+#define	RENDER_PROGRAM_WIREFRAME			0x00000001
+#define	RENDER_PROGRAM_DECAL				0x00000002
+#define	RENDER_PROGRAM_TEXTURE				0x00000004
+
+
+class Shader;
+
 
 class Renderable
 {
 public:
 	float* buf_verts;
+
+	Shader* currentShader;
+	Texture* texture;
 
 	Renderable();
 	Renderable(unsigned mode, unsigned programs);
@@ -31,14 +41,18 @@ private:
 	unsigned index_program;
 
 	unsigned vertsize;
-
-	Texture* texture;
 };
 
 
 class Renderer
 {
 public:
+	mat3f modelworld;
+	mat3f inv_modelworld;
+	mat3f worldview;
+	mat3f inv_worldview;
+	mat3f* projection;
+
 	static Renderer* startup();
 	static void shutdown();
 
@@ -50,14 +64,8 @@ private:
 	static const unsigned renderModes[RENDER_MODES];
 
 	Shader* wireframe;
-	Shader* ssdecal;
-	Shader* sstexture;
-
-	mat3f modelworld;
-	mat3f inv_modelworld;
-	mat3f worldview;
-	mat3f inv_worldview;
-	mat3f* projection;
+	Shader* decal;
+	Shader* texture;
 
 	Renderer();
 	~Renderer();

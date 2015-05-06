@@ -3,9 +3,12 @@
 #include	<GL/glew.h>
 #include	<GLFW/glfw3.h>
 #include	<string.h>
+#include	"shader.h"
 
 
 Renderer* Renderer::renderer = NULL;
+
+
 
 
 
@@ -34,8 +37,8 @@ Renderer::Renderer()
 {
 	// initialize shader programs
 	wireframe = new Shader("wireframe", SHADER_ATTRIB_POS | SHADER_ATTRIB_COL, SHADER_UNIFORM_TRANSFORM);
-	ssdecal = new Shader("ssdecal", SHADER_ATTRIB_POS | SHADER_ATTRIB_COL | SHADER_ATTRIB_TEX, SHADER_UNIFORM_TRANSFORM | SHADER_UNIFORM_TEXTURE);
-	sstexture = new Shader("sstexture", SHADER_ATTRIB_POS | SHADER_ATTRIB_TEX, SHADER_UNIFORM_TRANSFORM | SHADER_UNIFORM_TEXTURE);
+	decal = new Shader("decal", SHADER_ATTRIB_POS | SHADER_ATTRIB_COL | SHADER_ATTRIB_TEX, SHADER_UNIFORM_TRANSFORM | SHADER_UNIFORM_TEXTURE);
+	texture = new Shader("texture", SHADER_ATTRIB_POS | SHADER_ATTRIB_TEX, SHADER_UNIFORM_TRANSFORM | SHADER_UNIFORM_TEXTURE);
 
 	mat3f_identity(modelworld);
 	mat3f_identity(inv_modelworld);
@@ -49,6 +52,6 @@ Renderer::~Renderer()
 {
 	// delete shader programs
 	delete wireframe;
-	delete ssdecal;
-	delete sstexture;
+	delete decal;
+	delete texture;
 }

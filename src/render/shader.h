@@ -1,5 +1,7 @@
 #pragma	once
 
+#include	"renderer.h"
+
 
 #define	SHADER_ATTRIBS						3
 #define	SHADER_ATTRIB_POS					0x00000001
@@ -14,19 +16,20 @@
 class Shader
 {
 public:
+	int uniforms[SHADER_UNIFORMS];
+
 	Shader(const char* name, unsigned flags_attribs, unsigned flags_uniforms);
 	~Shader();
 
 private:
 	static const char* attribName[SHADER_ATTRIBS];
 	static const char* uniformName[SHADER_UNIFORMS];
+	static void (* const senduniform[SHADER_UNIFORMS])(Renderer* renderer, Renderable* rb);
 
 	unsigned gl_id;
 
 	unsigned flags_attribs;
 	unsigned flags_uniforms;
-
-	int uniforms[SHADER_UNIFORMS];
 
 	static unsigned createShader(const char* filename, unsigned type);
 

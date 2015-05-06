@@ -19,7 +19,7 @@
     <ClCompile Include="src\game\ScreenManager.cpp" />
     <ClCompile Include="src\main.cpp" />
     <ClCompile Include="src\render\renderer.cpp" />
-    <ClCompile Include="src\render\shaders\shader.cpp" />
+    <ClCompile Include="src\render\shader.cpp" />
     <ClCompile Include="src\render\Sprite.cpp" />
     <ClCompile Include="src\render\texture.cpp" />
   </ItemGroup>
@@ -35,7 +35,7 @@
     <ClInclude Include="src\math\vec2f.h" />
     <ClInclude Include="src\math\vec3f.h" />
     <ClInclude Include="src\render\renderer.h" />
-    <ClInclude Include="src\render\shaders\shader.h" />
+    <ClInclude Include="src\render\shader.h" />
     <ClInclude Include="src\render\Sprite.h" />
     <ClInclude Include="src\render\texture.h" />
   </ItemGroup>

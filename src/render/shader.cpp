@@ -22,6 +22,33 @@ const char* Shader::uniformName[SHADER_UNIFORMS] =
 };
 
 
+void sendtransform(Renderer* renderer, Renderable* rb)
+{
+	mat3f mvp;
+
+	mat3f_multiplyn(mvp, *renderer->projection, renderer->worldview);
+	mat3f_multiply(mvp, renderer->modelworld);
+
+	glUniformMatrix3fv(rb->currentShader->uniforms[0], 1, GL_FALSE, mvp);
+}
+
+void sendtexture(Renderer* renderer, Renderable* rb)
+{
+	(void)renderer;
+
+	glActiveTexture(GL_TEXTURE0);
+	glBindTexture(GL_TEXTURE_2D, rb->texture->getGLID());
+
+	glUniform1i(rb->currentShader->uniforms[1], 0);
+}
+
+void (* const Shader::senduniform[SHADER_UNIFORMS])(Renderer* renderer, Renderable* rb) =
+{
+	sendtransform,
+	sendtexture
+};
+
+
 Shader::Shader(const char* name, unsigned flags_attribs, unsigned flags_uniforms)
 {
 	unsigned vert, frag, i;

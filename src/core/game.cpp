@@ -32,6 +32,7 @@ Game::Game()
 
 	// start up renderer
 	renderer = Renderer::startup();
+	renderer->projection = &window->projection;
 
 	// initialize screen manager
 	screenManager = ScreenManager::getInstance();

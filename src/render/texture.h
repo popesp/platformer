@@ -11,6 +11,8 @@ public:
 	Texture(unsigned width, unsigned height);
 	~Texture();
 
+	unsigned getGLID();
+
 	static Texture* solidDiffuse(unsigned char r, unsigned char g, unsigned char b, unsigned char a);
 	static Texture* loadTexture(const char* filename);
 
