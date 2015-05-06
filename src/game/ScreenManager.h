@@ -7,7 +7,7 @@ class ScreenManager
 public:
 	static ScreenManager* getInstance();
 
-	void init(GameScreen* screen);
+	void init();
 	void destroy();
 
 	void navigate(GameScreen* screen);
@@ -23,6 +23,4 @@ private:
 
 	GameScreen* currentScreen;
 	std::stack<GameScreen*> screenStack;
-
-	void setScreen(GameScreen* screen);
 };

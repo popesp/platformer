@@ -18,8 +18,6 @@
 
 Game::Game()
 {
-	GameScreen* play;
-
 	// initialize glfw
 	glfwInit();
 
@@ -34,9 +32,9 @@ Game::Game()
 	renderer = Renderer::startup();
 
 	// initialize screen manager
-	screenManager = ScreenManager::getInstance();
-	play = new PlayScreen();
-	screenManager->init(play);
+	screenManager = ScreenManager::getInstance();	
+	screenManager->init();
+	screenManager->navigate(new PlayScreen());
 }
 
 Game::~Game()

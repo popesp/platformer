@@ -1,6 +1,4 @@
 #include "ScreenManager.h"
-
-
 ScreenManager* ScreenManager::instance = NULL;
 
 
@@ -13,9 +11,9 @@ ScreenManager* ScreenManager::getInstance()
 }
 
 
-void ScreenManager::init(GameScreen* screen)
+void ScreenManager::init()
 {
-	currentScreen = screen;
+
 }
 
 void ScreenManager::destroy()
@@ -27,28 +25,30 @@ void ScreenManager::destroy()
 //navigate and push the old current screen onto the stack
 void ScreenManager::navigate(GameScreen* screen)
 {
-	screenStack.push(currentScreen);
-	setScreen(screen);
+	if (currentScreen != NULL)
+		screenStack.push(currentScreen);
+
+	currentScreen = screen;
 }
 
 //navigate and replace the current screen
 void ScreenManager::navigateAndReplace(GameScreen* screen)
 {
-	setScreen(screen);
+	currentScreen = screen;
 }
 
 //navigate and delete all previous screens
 void ScreenManager::navigateAndClear(GameScreen* screen)
 {
-	setScreen(screen);
+	currentScreen = screen;
 	screenStack.empty(); 	//TODO: make sure this doesn't cause a memory leak
 }
 
 //navigate back one screen
 void ScreenManager::back()
 {
-	setScreen(screenStack.top());
-	screenStack.pop();		//TODO: make sure this doesn't cause a memory leak
+	currentScreen = screenStack.top();
+	screenStack.pop();
 }
 
 
@@ -60,10 +60,4 @@ void ScreenManager::update()
 void ScreenManager::render()
 {
 	currentScreen->render();
-}
-
-
-void ScreenManager::setScreen(GameScreen* screen)
-{
-	*currentScreen = *screen;
 }
