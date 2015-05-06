@@ -12,8 +12,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\core\game.cpp" />
+    <ClCompile Include="src\core\geometry\Circle.cpp" />
+    <ClCompile Include="src\core\geometry\Polygon.cpp" />
+    <ClCompile Include="src\core\geometry\Rectangle.cpp" />
+    <ClCompile Include="src\core\geometry\Shape.cpp" />
     <ClCompile Include="src\core\window.cpp" />
+    <ClCompile Include="src\game\Enemy.cpp" />
     <ClCompile Include="src\game\GameScreen.cpp" />
+    <ClCompile Include="src\game\Level.cpp" />
+    <ClCompile Include="src\game\Obstacle.cpp" />
     <ClCompile Include="src\game\Player.cpp" />
     <ClCompile Include="src\game\PlayScreen.cpp" />
     <ClCompile Include="src\game\ScreenManager.cpp" />
@@ -25,8 +32,15 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\game.h" />
+    <ClInclude Include="src\core\geometry\Circle.h" />
+    <ClInclude Include="src\core\geometry\Polygon.h" />
+    <ClInclude Include="src\core\geometry\Rectangle.h" />
+    <ClInclude Include="src\core\geometry\Shape.h" />
     <ClInclude Include="src\core\window.h" />
+    <ClInclude Include="src\game\Enemy.h" />
     <ClInclude Include="src\game\GameScreen.h" />
+    <ClInclude Include="src\game\Level.h" />
+    <ClInclude Include="src\game\Obstacle.h" />
     <ClInclude Include="src\game\Player.h" />
     <ClInclude Include="src\game\PlayScreen.h" />
     <ClInclude Include="src\game\ScreenManager.h" />
