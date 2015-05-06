@@ -7,14 +7,8 @@
 #define	WINDOW_DEFAULT_GLMAJOR				3
 #define	WINDOW_DEFAULT_GLMINOR				1
 
-#define	WINDOW_DEFAULT_NEAR					0.01f
-#define	WINDOW_DEFAULT_FAR					1000.f
-
-#define	WINDOW_SETTINGS_DEFAULT_ANGLE		90.f
 #define	WINDOW_SETTINGS_DEFAULT_SAMPLES		0
 #define	WINDOW_SETTINGS_DEFAULT_FLAGS		(WINDOW_SETTINGS_FLAG_VSYNC)
-
-#define	WINDOW_ANGLECONVERT					((float)M_PI / 360.f)
 
 
 Window::Window(int width, int height, const char* title)
@@ -28,12 +22,8 @@ Window::Window(int width, int height, const char* title)
 	gl_major = WINDOW_DEFAULT_GLMAJOR;
 	gl_minor = WINDOW_DEFAULT_GLMINOR;
 
-	near = WINDOW_DEFAULT_NEAR;
-	far = WINDOW_DEFAULT_FAR;
-
 	settings.width = width;
 	settings.height = height;
-	settings.angle = WINDOW_SETTINGS_DEFAULT_ANGLE;
 	settings.samples = WINDOW_SETTINGS_DEFAULT_SAMPLES;
 	settings.flags = WINDOW_SETTINGS_DEFAULT_FLAGS;
 
@@ -49,7 +39,6 @@ Window::~Window()
 void Window::applysettings(WindowSettings* new_settings)
 {
 	GLFWmonitor* primary;
-	float ratio, min;
 
 	// create a new window if needed
 	if (neednew(new_settings))
@@ -82,22 +71,11 @@ void Window::applysettings(WindowSettings* new_settings)
 		glfwSwapInterval(0);
 
 	// compute the projection matrix for the window
-	ratio = near * tanf(new_settings->angle * WINDOW_ANGLECONVERT);
-	if (new_settings->width < new_settings->height)
-	{
-		min = (float)new_settings->width / (float)new_settings->height;
-		mat4f_frustum(projection, -ratio * min, ratio * min, -ratio, ratio, near, far);
-	}
-	else
-	{
-		min = (float)new_settings->height / (float)new_settings->width;
-		mat4f_frustum(projection, -ratio, ratio, -ratio * min, ratio * min, near, far);
-	}
+	mat3f_ortho(projection, 0.f, (float)new_settings->width, (float)new_settings->height, 0.f);
 
 	// copy over new settings
 	settings.width = new_settings->width;
 	settings.height = new_settings->height;
-	settings.angle = new_settings->angle;
 	settings.samples = new_settings->samples;
 	settings.flags = new_settings->flags;
 }

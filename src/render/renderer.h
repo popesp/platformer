@@ -1,7 +1,7 @@
 #pragma	once
 
 
-#include	"../math/mat4f.h"
+#include	"../math/mat3f.h"
 #include	"texture.h"
 #include	"shaders/shader.h"
 
@@ -53,11 +53,11 @@ private:
 	Shader* ssdecal;
 	Shader* sstexture;
 
-	mat4f modelworld;
-	mat4f inv_modelworld;
-	mat4f worldview;
-	mat4f inv_worldview;
-	mat4f* projection;
+	mat3f modelworld;
+	mat3f inv_modelworld;
+	mat3f worldview;
+	mat3f inv_worldview;
+	mat3f* projection;
 
 	Renderer();
 	~Renderer();

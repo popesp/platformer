@@ -1,5 +1,7 @@
 #include	"game.h"
 
+#include	"../game/PlayScreen.h"
+
 
 #define	GAME_TITLE							"Platformer"
 #define	GAME_VERSION						"0.0.1"
@@ -17,10 +19,21 @@
 Game::Game()
 {
 	GameScreen* play;
+
+	// initialize glfw
 	glfwInit();
 
+	// create window
 	window = new Window(GAME_DEFAULT_WIDTH, GAME_DEFAULT_HEIGHT, GAME_TITLE " " GAME_VERSION);
 
+	// initialize glew
+	glewExperimental = GL_TRUE;
+	glewInit();
+
+	// start up renderer
+	renderer = Renderer::startup();
+
+	// initialize screen manager
 	screenManager = ScreenManager::getInstance();
 	play = new PlayScreen();
 	screenManager->init(play);
@@ -28,7 +41,9 @@ Game::Game()
 
 Game::~Game()
 {
-	// delete
+	screenManager->destroy();
+
+	Renderer::shutdown();
 }
 
 void Game::mainloop()
@@ -82,8 +97,8 @@ void Game::update()
 
 	screenManager->update();
 
-	printf("FPS: %d\n", global.fps);
-	printf("Render time: %f ms\n\n", global.rendertime * 1000.);
+	//printf("FPS: %d\n", global.fps);
+	//printf("Render time: %f ms\n\n", global.rendertime * 1000.);
 
 	// check for window close messages
 	if (glfwWindowShouldClose(window->w))

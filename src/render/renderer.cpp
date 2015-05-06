@@ -37,10 +37,10 @@ Renderer::Renderer()
 	ssdecal = new Shader("ssdecal", SHADER_ATTRIB_POS | SHADER_ATTRIB_COL | SHADER_ATTRIB_TEX, SHADER_UNIFORM_TRANSFORM | SHADER_UNIFORM_TEXTURE);
 	sstexture = new Shader("sstexture", SHADER_ATTRIB_POS | SHADER_ATTRIB_TEX, SHADER_UNIFORM_TRANSFORM | SHADER_UNIFORM_TEXTURE);
 
-	mat4f_identity(modelworld);
-	mat4f_identity(inv_modelworld);
-	mat4f_identity(worldview);
-	mat4f_identity(inv_worldview);
+	mat3f_identity(modelworld);
+	mat3f_identity(inv_modelworld);
+	mat3f_identity(worldview);
+	mat3f_identity(inv_worldview);
 
 	projection = NULL;
 }

@@ -4,7 +4,7 @@
 
 #include	<gl/glew.h>
 #include	<GLFW/glfw3.h>
-#include	"../math/mat4f.h"
+#include	"../math/mat3f.h"
 
 #define	WINDOW_SETTINGS_FLAG_VSYNC			0x00000001
 #define	WINDOW_SETTINGS_FLAG_FULLSCREEN		0x00000002
@@ -16,8 +16,6 @@ typedef struct
 	int width;
 	int height;
 
-	float angle;
-
 	int samples;
 
 	unsigned flags;
@@ -28,7 +26,7 @@ class Window
 public:
 	GLFWwindow* w;
 
-	mat4f projection;
+	mat3f projection;
 
 	Window(int width, int height, const char* title);
 	~Window();
@@ -42,9 +40,6 @@ private:
 
 	int gl_major;
 	int gl_minor;
-
-	float near;
-	float far;
 
 	unsigned neednew(WindowSettings* new_settings);
 };

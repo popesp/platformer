@@ -37,6 +37,9 @@
     <Filter Include="src\render\shaders">
       <UniqueIdentifier>{f7054db3-46bf-4f56-b421-9e4279613a33}</UniqueIdentifier>
     </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{377f21b3-4e49-46e1-9a46-c09c2d49fa05}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="src\main.cpp" />
@@ -111,5 +114,28 @@
     <ClInclude Include="src\render\shaders\shader.h">
       <Filter>headers\render\shaders</Filter>
     </ClInclude>
+    <ClInclude Include="src\math\mat3f.h">
+      <Filter>headers\math</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\ssdecal.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssdecal.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\sstexture.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\sstexture.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\wireframe.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\wireframe.vert">
+      <Filter>shaders</Filter>
+    </None>
   </ItemGroup>
 </Project>

@@ -81,7 +81,14 @@ unsigned Shader::createShader(const char* filename, unsigned type)
 	shader = glCreateShader(type);
 
 	// load shader file
-	file = fopen(filename, "r");
+	file = fopen(filename, "rb");
+
+	// check if file was loaded
+	if (!file)
+	{
+		printf("Failed to load %s\n", filename);
+		return 0;
+	}
 
 	// get file length
 	fseek(file, 0, SEEK_END);

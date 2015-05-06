@@ -1,13 +1,11 @@
 #pragma	once
 
 
-#include <GL/glew.h>
-#include <GLFW/glfw3.h>
-
-#include "window.h"
-#include "../game/GameScreen.h"
-#include "../game/PlayScreen.h"
-#include "../game/ScreenManager.h"
+#include	<GL/glew.h>
+#include	<GLFW/glfw3.h>
+#include	"../game/ScreenManager.h"
+#include	"../render/renderer.h"
+#include	"window.h"
 
 
 class Game
@@ -19,7 +17,7 @@ public:
 	void mainloop();
 
 private:
-	//Renderer* renderer;
+	Renderer* renderer;
 	ScreenManager* screenManager;
 	Window* window;	
 
