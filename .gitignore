@@ -4,3 +4,7 @@ Release/
 *.sdf
 *.sln
 *.suo
+middleware/include/GL/glew.h
+middleware/include/GLFW/glfw3.h
+middleware/lib/glew32.lib
+middleware/lib/glfw3.lib
