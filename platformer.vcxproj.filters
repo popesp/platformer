@@ -1,0 +1,180 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="src\main.cpp" />
+    <ClCompile Include="src\core\game.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\window.cpp">
+      <Filter>src\core</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\geometry\Circle.cpp">
+      <Filter>src\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\geometry\Polygon.cpp">
+      <Filter>src\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\geometry\Rectangle.cpp">
+      <Filter>src\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\geometry\Shape.cpp">
+      <Filter>src\core\geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\renderer.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\shader.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\Sprite.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\render\texture.cpp">
+      <Filter>src\render</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\ScreenManager.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Obstacle.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Player.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\PlayScreen.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Level.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\Enemy.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\GameScreen.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\core\game.h">
+      <Filter>headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\window.h">
+      <Filter>headers\core</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\geometry\Circle.h">
+      <Filter>headers\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\geometry\Polygon.h">
+      <Filter>headers\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\geometry\Rectangle.h">
+      <Filter>headers\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\geometry\Shape.h">
+      <Filter>headers\core\geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\mat3f.h">
+      <Filter>headers\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\mat4f.h">
+      <Filter>headers\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vec3f.h">
+      <Filter>headers\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\vec2f.h">
+      <Filter>headers\math</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\renderer.h">
+      <Filter>headers\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\shader.h">
+      <Filter>headers\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\Sprite.h">
+      <Filter>headers\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\render\texture.h">
+      <Filter>headers\render</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Enemy.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\GameScreen.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Level.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Obstacle.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\Player.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\PlayScreen.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\ScreenManager.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="shaders\ssdecal.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\ssdecal.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\sstexture.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\sstexture.vert">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\wireframe.frag">
+      <Filter>shaders</Filter>
+    </None>
+    <None Include="shaders\wireframe.vert">
+      <Filter>shaders</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="src">
+      <UniqueIdentifier>{faa03126-b0e8-4732-a2b0-5dc85c6fc52a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers">
+      <UniqueIdentifier>{cbd51f63-ae48-430a-9fd6-e6fee9876151}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core">
+      <UniqueIdentifier>{2ae4fa9d-8543-4074-9bb4-6cc53904ab8c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\core">
+      <UniqueIdentifier>{ad33d065-25f9-48be-8e18-963553db3dbc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\core\geometry">
+      <UniqueIdentifier>{d4749622-aa9d-4d14-b8fd-ee48cdd2af32}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\geometry">
+      <UniqueIdentifier>{e08e8e68-75e8-4e92-8502-d9aa89213518}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\math">
+      <UniqueIdentifier>{ae7b91f6-a37d-4383-8c00-31729048924d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\render">
+      <UniqueIdentifier>{38349419-d93b-47f2-a367-7cf36f07e4d1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\render">
+      <UniqueIdentifier>{7dc9fde5-6d73-414d-9190-d17cd3f8371c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="shaders">
+      <UniqueIdentifier>{b85d5e6f-5ae8-441b-91e7-dbb650c77d24}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\game">
+      <UniqueIdentifier>{6c0e7354-9ad2-43a4-98eb-570bb8355de4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game">
+      <UniqueIdentifier>{610a23d5-b80e-4885-9f71-eedad0745d00}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
