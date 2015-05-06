@@ -13,6 +13,15 @@
 #define	SHADER_UNIFORM_TEXTURE				0x00000002
 
 
+static const char* attribName[SHADER_ATTRIBS] = {"vertpos", "vertcol", "verttex"};
+static const unsigned attribSize[SHADER_ATTRIBS] = {2, 3, 2};
+static const char* uniformName[SHADER_UNIFORMS] = {"transform",	"texture"};
+
+
+class Renderer;
+class Renderable;
+
+
 class Shader
 {
 public:
@@ -21,11 +30,11 @@ public:
 	Shader(const char* name, unsigned flags_attribs, unsigned flags_uniforms);
 	~Shader();
 
-private:
-	static const char* attribName[SHADER_ATTRIBS];
-	static const char* uniformName[SHADER_UNIFORMS];
-	static void (* const senduniform[SHADER_UNIFORMS])(Renderer* renderer, Renderable* rb);
+	unsigned getGLID();
 
+	void sendUniforms(Renderer* renderer, Renderable* rb);
+
+private:
 	unsigned gl_id;
 
 	unsigned flags_attribs;

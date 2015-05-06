@@ -8,41 +8,29 @@
 #define	SHADER_FILEPATH						"shaders/"
 
 
-const char* Shader::attribName[SHADER_ATTRIBS] =
-{
-	"vertpos",
-	"vertcol",
-	"verttex"
-};
-
-const char* Shader::uniformName[SHADER_UNIFORMS] =
-{
-	"transform",
-	"texture"
-};
-
-
-void sendtransform(Renderer* renderer, Renderable* rb)
+static void sendtransform(Renderer* renderer, Renderable* rb, int loc)
 {
 	mat3f mvp;
+
+	(void)rb;
 
 	mat3f_multiplyn(mvp, *renderer->projection, renderer->worldview);
 	mat3f_multiply(mvp, renderer->modelworld);
 
-	glUniformMatrix3fv(rb->currentShader->uniforms[0], 1, GL_FALSE, mvp);
+	glUniformMatrix3fv(loc, 1, GL_FALSE, mvp);
 }
 
-void sendtexture(Renderer* renderer, Renderable* rb)
+static void sendtexture(Renderer* renderer, Renderable* rb, int loc)
 {
 	(void)renderer;
 
 	glActiveTexture(GL_TEXTURE0);
 	glBindTexture(GL_TEXTURE_2D, rb->texture->getGLID());
 
-	glUniform1i(rb->currentShader->uniforms[1], 0);
+	glUniform1i(loc, 0);
 }
 
-void (* const Shader::senduniform[SHADER_UNIFORMS])(Renderer* renderer, Renderable* rb) =
+static void (* const senduniform[SHADER_UNIFORMS])(Renderer* renderer, Renderable* rb, int loc) =
 {
 	sendtransform,
 	sendtexture
@@ -95,6 +83,22 @@ Shader::Shader(const char* name, unsigned flags_attribs, unsigned flags_uniforms
 Shader::~Shader()
 {
 	glDeleteProgram(gl_id);
+}
+
+
+unsigned Shader::getGLID()
+{
+	return gl_id;
+}
+
+
+void Shader::sendUniforms(Renderer* renderer, Renderable* rb)
+{
+	unsigned i;
+
+	for (i = 0; i < SHADER_UNIFORMS; i++)
+		if (flags_uniforms & (0x00000001 << i))
+			senduniform[i](renderer, rb, uniforms[i]);
 }
 
 

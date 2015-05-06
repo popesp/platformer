@@ -7,7 +7,7 @@
 class Sprite : public Renderable
 {
 public:
-	Sprite();
+	Sprite(const char* textureName);
 	Sprite(vec2f position, float width, float height, const char* textureName);
 	~Sprite();
 	void setPosition(float x, float y);

@@ -10,6 +10,6 @@ public:
 	void render();
 	void update();
 
-	Sprite sprite;
+	Sprite* sprite;
 };
 

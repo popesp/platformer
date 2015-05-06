@@ -12,6 +12,6 @@ public:
 
 private:
 	vec2f position;
-	Sprite sprite;
+	Sprite* sprite;
 	Rectangle boundingBox;
 };

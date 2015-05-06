@@ -2,6 +2,7 @@
 
 
 #include	"../math/mat3f.h"
+#include	"shader.h"
 #include	"texture.h"
 
 
@@ -22,23 +23,29 @@ class Shader;
 class Renderable
 {
 public:
-	float* buf_verts;
-
 	Shader* currentShader;
 	Texture* texture;
 
-	Renderable();
-	Renderable(unsigned mode, unsigned programs);
+	Renderable(unsigned mode, unsigned flags_attribs);
 	~Renderable();
 
+	void allocate(unsigned num_verts);
+	void upload();
+
+	unsigned getMode();
+	unsigned getVAO();
+	unsigned getNumVerts();
+
 private:
+	static void initAttrib(unsigned attrib, int size, unsigned vertsize, int offs);
+
+	float* buf_verts;
+
 	unsigned gl_id_mode;
 	unsigned gl_id_vao;
 	unsigned gl_id_vbo;
 
 	unsigned num_verts;
-
-	unsigned index_program;
 
 	unsigned vertsize;
 };
@@ -53,7 +60,12 @@ public:
 	mat3f inv_worldview;
 	mat3f* projection;
 
+	Shader* wireframe;
+	Shader* decal;
+	Shader* texture;
+
 	static Renderer* startup();
+	static Renderer* getInstance();
 	static void shutdown();
 
 	void render(Renderable* rb);
@@ -62,10 +74,6 @@ private:
 	static Renderer* renderer;
 
 	static const unsigned renderModes[RENDER_MODES];
-
-	Shader* wireframe;
-	Shader* decal;
-	Shader* texture;
 
 	Renderer();
 	~Renderer();
