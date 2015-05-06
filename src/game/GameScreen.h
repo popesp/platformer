@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include "../render/renderer.h"
 
 class GameScreen
 {

@@ -34,12 +34,18 @@ void ScreenManager::navigate(GameScreen* screen)
 //navigate and replace the current screen
 void ScreenManager::navigateAndReplace(GameScreen* screen)
 {
+	if (currentScreen != NULL)
+		delete currentScreen;
+
 	currentScreen = screen;
 }
 
 //navigate and delete all previous screens
 void ScreenManager::navigateAndClear(GameScreen* screen)
 {
+	if (currentScreen != NULL)
+		delete currentScreen;
+
 	currentScreen = screen;
 	screenStack.empty(); 	//TODO: make sure this doesn't cause a memory leak
 }
@@ -47,8 +53,14 @@ void ScreenManager::navigateAndClear(GameScreen* screen)
 //navigate back one screen
 void ScreenManager::back()
 {
-	currentScreen = screenStack.top();
-	screenStack.pop();
+	if (screenStack.size() > 0)
+	{
+		if (currentScreen != NULL)
+			delete currentScreen;
+
+		currentScreen = screenStack.top();
+		screenStack.pop();
+	}
 }
 
 

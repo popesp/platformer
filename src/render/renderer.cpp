@@ -8,9 +8,15 @@
 
 Renderer* Renderer::renderer = NULL;
 
+Renderable::Renderable()
+{
 
+}
 
+Renderable::~Renderable()
+{
 
+}
 
 Renderer* Renderer::startup()
 {
