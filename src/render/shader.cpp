@@ -12,10 +12,8 @@ static void sendtransform(Renderer* renderer, Renderable* rb, int loc)
 {
 	mat3f mvp;
 
-	(void)rb;
-
 	mat3f_multiplyn(mvp, *renderer->projection, renderer->worldview);
-	mat3f_multiply(mvp, renderer->modelworld);
+	mat3f_multiply(mvp, *rb->getTransform());
 
 	glUniformMatrix3fv(loc, 1, GL_FALSE, mvp);
 }

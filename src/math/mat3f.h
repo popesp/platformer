@@ -243,7 +243,7 @@ static void mat3f_rotatemuln(mat3f res, mat3f m, float angle)
 	param:	m			original matrix
 	param:	angle		angle of rotation in radians
 */
-static void mat3f_rotatexmul(mat3f m, float angle)
+static void mat3f_rotatemul(mat3f m, float angle)
 {
 	mat3f n;
 

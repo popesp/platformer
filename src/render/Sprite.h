@@ -8,14 +8,16 @@ class Sprite : public Renderable
 {
 public:
 	Sprite(const char* textureName);
-	Sprite(vec2f position, float width, float height, const char* textureName);
+	Sprite(vec2f pos, vec2f dim, const char* textureName);
 	~Sprite();
+
 	void setPosition(float x, float y);
 	void translate(float x, float y);
 
+	void updateTransform();
 
 private:
-	vec2f position;
-	Rectangle rect;
+	vec2f pos, dim, scale;
+	float rotation;
 };
 

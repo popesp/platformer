@@ -29,7 +29,7 @@ public:
 	Texture* texture;
 
 	Renderable(unsigned mode, unsigned flags_attribs);
-	~Renderable();
+	virtual ~Renderable();
 
 	void allocate(unsigned num_verts);
 	void upload();
@@ -43,9 +43,14 @@ public:
 	void verttex(float u, float v);
 	void resetBuffer();
 
-protected:
-	static void initAttrib(unsigned attrib, int size, unsigned vertsize, int offs);
+	mat3f* getTransform();
 
+	virtual void updateTransform() = 0;
+
+protected:
+	mat3f transform;
+
+private:
 	float* buf_verts;
 	float* ptr_verts;
 
@@ -56,16 +61,15 @@ protected:
 	unsigned num_verts;
 
 	unsigned vertsize;
+
+	static void initAttrib(unsigned attrib, int size, unsigned vertsize, int offs);
 };
 
 
 class Renderer
 {
 public:
-	mat3f modelworld;
-	mat3f inv_modelworld;
 	mat3f worldview;
-	mat3f inv_worldview;
 	mat3f* projection;
 
 	Shader* wireframe;

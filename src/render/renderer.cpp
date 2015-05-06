@@ -17,6 +17,8 @@ Renderable::Renderable(unsigned mode, unsigned flags_attribs)
 	unsigned i;
 	int offs;
 
+	mat3f_identity(transform);
+
 	gl_id_mode = glmodes[mode];
 
 	glGenVertexArrays(1, &gl_id_vao);
@@ -118,6 +120,12 @@ void Renderable::resetBuffer()
 }
 
 
+mat3f* Renderable::getTransform()
+{
+	return &transform;
+}
+
+
 void Renderable::initAttrib(unsigned attrib, int size, unsigned vertsize, int offs)
 {
 	glEnableVertexAttribArray(attrib);
@@ -166,10 +174,7 @@ Renderer::Renderer()
 	decal = new Shader("decal", SHADER_ATTRIBFLAG_POS | SHADER_ATTRIBFLAG_COL | SHADER_ATTRIBFLAG_TEX, SHADER_UNIFORMFLAG_TRANSFORM | SHADER_UNIFORMFLAG_TEXTURE);
 	texture = new Shader("texture", SHADER_ATTRIBFLAG_POS | SHADER_ATTRIBFLAG_TEX, SHADER_UNIFORMFLAG_TRANSFORM | SHADER_UNIFORMFLAG_TEXTURE);
 
-	mat3f_identity(modelworld);
-	mat3f_identity(inv_modelworld);
 	mat3f_identity(worldview);
-	mat3f_identity(inv_worldview);
 
 	projection = NULL;
 }
