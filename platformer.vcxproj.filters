@@ -55,6 +55,20 @@
     </ClCompile>
     <ClCompile Include="src\game\levels\levels.cpp">
       <Filter>src\game\levels</Filter>
+    <ClCompile Include="src\core\input\KeyEvent.cpp">
+      <Filter>src\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\input\Event.cpp">
+      <Filter>src\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\input\EventListener.cpp">
+      <Filter>src\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\input\EventManager.cpp">
+      <Filter>src\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\CharacterController.cpp">
+      <Filter>src\game</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -123,6 +137,20 @@
     </ClInclude>
     <ClInclude Include="src\game\levels\levels.h">
       <Filter>headers\game\levels</Filter>
+    <ClInclude Include="src\core\input\KeyEvent.h">
+      <Filter>headers\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\input\EventManager.h">
+      <Filter>headers\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\input\EventListener.h">
+      <Filter>headers\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\input\Event.h">
+      <Filter>headers\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\CharacterController.h">
+      <Filter>headers\game</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -187,6 +215,14 @@
     </Filter>
     <Filter Include="src\game\levels">
       <UniqueIdentifier>{a87487fe-5f97-40a2-8246-24f51f1c0e3f}</UniqueIdentifier>
+    <Filter Include="headers\core\input">
+      <UniqueIdentifier>{53d67b7f-c0d0-4fb2-9d33-8114626bc65c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\core\input\input">
+      <UniqueIdentifier>{bc457bf9-c050-4210-b906-b92c62952490}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\input">
+      <UniqueIdentifier>{a62fa430-f673-46fc-8f28-4deb46ec73fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

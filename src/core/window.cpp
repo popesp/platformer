@@ -78,6 +78,8 @@ void Window::applysettings(WindowSettings* new_settings)
 	settings.height = new_settings->height;
 	settings.samples = new_settings->samples;
 	settings.flags = new_settings->flags;
+
+	glfwSetKeyCallback(w, EventManager::keyCallback);
 }
 
 
