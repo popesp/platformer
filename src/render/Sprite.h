@@ -7,7 +7,9 @@
 class Sprite : public Renderable
 {
 public:
-	Sprite(const char* textureName);
+	vec2f pos, scale;
+	float rotation;
+
 	Sprite(vec2f pos, vec2f dim, const char* textureName);
 	~Sprite();
 
@@ -17,7 +19,8 @@ public:
 	void updateTransform();
 
 private:
-	vec2f pos, dim, scale;
-	float rotation;
+	vec2f dim;
+
+	void calculateVerts();
 };
 

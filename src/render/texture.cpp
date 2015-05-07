@@ -5,9 +5,9 @@
 #include	<FreeImage.h>
 
 
-#define	TR									0
+#define	TR									2
 #define	TG									1
-#define	TB									2
+#define	TB									0
 #define	TA									3
 
 
@@ -86,6 +86,17 @@ Texture* Texture::loadTexture(const char* filename)
 	FreeImage_Unload(bmp32);
 
 	return texture;
+}
+
+
+unsigned Texture::getWidth()
+{
+	return width;
+}
+
+unsigned Texture::getHeight()
+{
+	return height;
 }
 
 
