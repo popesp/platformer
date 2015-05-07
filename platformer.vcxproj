@@ -19,7 +19,8 @@
     <ClCompile Include="src\core\window.cpp" />
     <ClCompile Include="src\game\Enemy.cpp" />
     <ClCompile Include="src\game\GameScreen.cpp" />
-    <ClCompile Include="src\game\Level.cpp" />
+    <ClCompile Include="src\game\levels\levels.cpp" />
+    <ClCompile Include="src\game\levels\tiles.cpp" />
     <ClCompile Include="src\game\Obstacle.cpp" />
     <ClCompile Include="src\game\Player.cpp" />
     <ClCompile Include="src\game\PlayScreen.cpp" />
@@ -39,7 +40,8 @@
     <ClInclude Include="src\core\window.h" />
     <ClInclude Include="src\game\Enemy.h" />
     <ClInclude Include="src\game\GameScreen.h" />
-    <ClInclude Include="src\game\Level.h" />
+    <ClInclude Include="src\game\levels\levels.h" />
+    <ClInclude Include="src\game\levels\tiles.h" />
     <ClInclude Include="src\game\Obstacle.h" />
     <ClInclude Include="src\game\Player.h" />
     <ClInclude Include="src\game\PlayScreen.h" />

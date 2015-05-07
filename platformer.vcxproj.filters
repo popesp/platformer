@@ -44,14 +44,17 @@
     <ClCompile Include="src\game\PlayScreen.cpp">
       <Filter>src\game</Filter>
     </ClCompile>
-    <ClCompile Include="src\game\Level.cpp">
-      <Filter>src\game</Filter>
-    </ClCompile>
     <ClCompile Include="src\game\Enemy.cpp">
       <Filter>src\game</Filter>
     </ClCompile>
     <ClCompile Include="src\game\GameScreen.cpp">
       <Filter>src\game</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\levels\tiles.cpp">
+      <Filter>src\game\levels</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\levels\levels.cpp">
+      <Filter>src\game\levels</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -103,9 +106,6 @@
     <ClInclude Include="src\game\GameScreen.h">
       <Filter>headers\game</Filter>
     </ClInclude>
-    <ClInclude Include="src\game\Level.h">
-      <Filter>headers\game</Filter>
-    </ClInclude>
     <ClInclude Include="src\game\Obstacle.h">
       <Filter>headers\game</Filter>
     </ClInclude>
@@ -117,6 +117,12 @@
     </ClInclude>
     <ClInclude Include="src\game\ScreenManager.h">
       <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\levels\tiles.h">
+      <Filter>headers\game\levels</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\levels\levels.h">
+      <Filter>headers\game\levels</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -175,6 +181,12 @@
     </Filter>
     <Filter Include="src\game">
       <UniqueIdentifier>{610a23d5-b80e-4885-9f71-eedad0745d00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\game\levels">
+      <UniqueIdentifier>{c0233889-dc89-4256-9087-968491474b2a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\game\levels">
+      <UniqueIdentifier>{a87487fe-5f97-40a2-8246-24f51f1c0e3f}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

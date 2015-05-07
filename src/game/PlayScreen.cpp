@@ -9,7 +9,7 @@ PlayScreen::PlayScreen()
 
 PlayScreen::~PlayScreen()
 {
-
+	delete sprite;
 }
 
 void PlayScreen::render()

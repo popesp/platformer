@@ -19,6 +19,9 @@ public:
 	void render();
 
 private:
+	ScreenManager();
+	~ScreenManager();
+
 	static ScreenManager* instance;
 
 	GameScreen* currentScreen;

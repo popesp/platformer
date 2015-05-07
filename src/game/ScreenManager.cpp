@@ -73,3 +73,14 @@ void ScreenManager::render()
 {
 	currentScreen->render();
 }
+
+
+ScreenManager::ScreenManager()
+{
+
+}
+
+ScreenManager::~ScreenManager()
+{
+	delete currentScreen;
+}
