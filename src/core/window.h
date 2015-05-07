@@ -5,6 +5,7 @@
 #include	<gl/glew.h>
 #include	<GLFW/glfw3.h>
 #include	"../math/mat3f.h"
+#include	"input\EventManager.h"
 
 #define	WINDOW_SETTINGS_FLAG_VSYNC			0x00000001
 #define	WINDOW_SETTINGS_FLAG_FULLSCREEN		0x00000002
@@ -19,6 +20,7 @@ typedef struct
 	int samples;
 
 	unsigned flags;
+	
 } WindowSettings;
 
 class Window

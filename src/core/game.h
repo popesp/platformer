@@ -3,7 +3,9 @@
 
 #include	<GL/glew.h>
 #include	<GLFW/glfw3.h>
+#include	"../game/PlayScreen.h"
 #include	"../game/ScreenManager.h"
+#include	"../core/input/EventManager.h"
 #include	"../render/renderer.h"
 #include	"window.h"
 

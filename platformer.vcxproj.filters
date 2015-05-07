@@ -53,6 +53,21 @@
     <ClCompile Include="src\game\GameScreen.cpp">
       <Filter>src\game</Filter>
     </ClCompile>
+    <ClCompile Include="src\core\input\KeyEvent.cpp">
+      <Filter>src\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\input\Event.cpp">
+      <Filter>src\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\input\EventListener.cpp">
+      <Filter>src\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\core\input\EventManager.cpp">
+      <Filter>src\core\input</Filter>
+    </ClCompile>
+    <ClCompile Include="src\game\CharacterController.cpp">
+      <Filter>src\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="src\core\game.h">
@@ -118,6 +133,21 @@
     <ClInclude Include="src\game\ScreenManager.h">
       <Filter>headers\game</Filter>
     </ClInclude>
+    <ClInclude Include="src\core\input\KeyEvent.h">
+      <Filter>headers\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\input\EventManager.h">
+      <Filter>headers\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\input\EventListener.h">
+      <Filter>headers\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\core\input\Event.h">
+      <Filter>headers\core\input</Filter>
+    </ClInclude>
+    <ClInclude Include="src\game\CharacterController.h">
+      <Filter>headers\game</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\wireframe.frag">
@@ -175,6 +205,15 @@
     </Filter>
     <Filter Include="src\game">
       <UniqueIdentifier>{610a23d5-b80e-4885-9f71-eedad0745d00}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\core\input">
+      <UniqueIdentifier>{53d67b7f-c0d0-4fb2-9d33-8114626bc65c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="headers\core\input\input">
+      <UniqueIdentifier>{bc457bf9-c050-4210-b906-b92c62952490}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\core\input">
+      <UniqueIdentifier>{a62fa430-f673-46fc-8f28-4deb46ec73fd}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

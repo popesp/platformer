@@ -16,7 +16,12 @@
     <ClCompile Include="src\core\geometry\Polygon.cpp" />
     <ClCompile Include="src\core\geometry\Rectangle.cpp" />
     <ClCompile Include="src\core\geometry\Shape.cpp" />
+    <ClCompile Include="src\core\input\Event.cpp" />
+    <ClCompile Include="src\core\input\EventListener.cpp" />
+    <ClCompile Include="src\core\input\EventManager.cpp" />
+    <ClCompile Include="src\core\input\KeyEvent.cpp" />
     <ClCompile Include="src\core\window.cpp" />
+    <ClCompile Include="src\game\CharacterController.cpp" />
     <ClCompile Include="src\game\Enemy.cpp" />
     <ClCompile Include="src\game\GameScreen.cpp" />
     <ClCompile Include="src\game\Level.cpp" />
@@ -36,7 +41,12 @@
     <ClInclude Include="src\core\geometry\Polygon.h" />
     <ClInclude Include="src\core\geometry\Rectangle.h" />
     <ClInclude Include="src\core\geometry\Shape.h" />
+    <ClInclude Include="src\core\input\Event.h" />
+    <ClInclude Include="src\core\input\EventListener.h" />
+    <ClInclude Include="src\core\input\EventManager.h" />
+    <ClInclude Include="src\core\input\KeyEvent.h" />
     <ClInclude Include="src\core\window.h" />
+    <ClInclude Include="src\game\CharacterController.h" />
     <ClInclude Include="src\game\Enemy.h" />
     <ClInclude Include="src\game\GameScreen.h" />
     <ClInclude Include="src\game\Level.h" />

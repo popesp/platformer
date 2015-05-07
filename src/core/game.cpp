@@ -1,8 +1,5 @@
 #include	"game.h"
 
-#include	"../game/PlayScreen.h"
-
-
 #define	GAME_TITLE							"Platformer"
 #define	GAME_VERSION						"0.0.1"
 
@@ -92,7 +89,8 @@ void Game::mainloop()
 
 void Game::update()
 {
-	glfwPollEvents();
+	EventManager::poll();
+	EventManager::notify();
 
 	screenManager->update();
 
