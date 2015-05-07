@@ -1,5 +1,8 @@
 #include "PlayScreen.h"
 
+#include	"levels/levels.h"
+
+
 PlayScreen::PlayScreen()
 {
 	vec2f pos = {200.f, 100.f};
@@ -14,7 +17,7 @@ PlayScreen::~PlayScreen()
 
 void PlayScreen::render()
 {
-	sprite->updateTransform();
+	LevelManager::getInstance()->render(0);
 	Renderer::getInstance()->render(sprite);
 }
 

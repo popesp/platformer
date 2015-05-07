@@ -160,6 +160,8 @@ void Renderer::render(Renderable* rb)
 	glUseProgram(shader->getGLID());
 	glBindVertexArray(rb->getVAO());
 
+	rb->updateTransform();
+
 	// send program uniforms
 	shader->sendUniforms(this, rb);
 
