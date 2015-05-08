@@ -58,6 +58,7 @@
     <ClInclude Include="src\game\ScreenManager.h" />
     <ClInclude Include="src\math\mat3f.h" />
     <ClInclude Include="src\math\mat4f.h" />
+    <ClInclude Include="src\math\physics2f.h" />
     <ClInclude Include="src\math\vec2f.h" />
     <ClInclude Include="src\math\vec3f.h" />
     <ClInclude Include="src\render\renderer.h" />

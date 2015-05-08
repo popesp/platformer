@@ -11,13 +11,19 @@
 class Player
 {
 public:
-	Player();
-	~Player();
-	//void update(float deltaTime);
+	Player(unsigned levelIndex);
+
+	unsigned getLevel();
+
+	void update();
+	void render();
 
 private:
-	vec2f position;
+	vec2f pos;
+	vec2f old;
+	vec2f acc;
+
+	unsigned levelIndex;
+
 	Sprite* sprite;
-	Rectangle boundingBox;
-	//CharacterController controller;
 };

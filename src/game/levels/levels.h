@@ -15,13 +15,16 @@ public:
 
 	void updateTransform();
 
-private:
-	unsigned char* layout;
+	vec2f* getSpawn();
 
+private:
 	unsigned width;
 	unsigned height;
-
+	
+	unsigned char* layout;
+	
 	vec2f spawn;
+	
 };
 
 class LevelManager
@@ -29,12 +32,10 @@ class LevelManager
 public:
 	static LevelManager* getInstance();
 
-	void render(unsigned levelIndex);
+	Level* levels[LEVELS];
 
 private:
 	static LevelManager* instance;
-
-	Level* levels[LEVELS];
 
 	LevelManager();
 };

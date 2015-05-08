@@ -55,7 +55,7 @@
     </ClCompile>
     <ClCompile Include="src\game\levels\levels.cpp">
       <Filter>src\game\levels</Filter>
-	</ClCompile>
+    </ClCompile>
     <ClCompile Include="src\core\input\KeyEvent.cpp">
       <Filter>src\core\input</Filter>
     </ClCompile>
@@ -138,7 +138,7 @@
     </ClInclude>
     <ClInclude Include="src\game\levels\levels.h">
       <Filter>headers\game\levels</Filter>
-	</ClInclude>
+    </ClInclude>
     <ClInclude Include="src\core\input\KeyEvent.h">
       <Filter>headers\core\input</Filter>
     </ClInclude>
@@ -153,6 +153,9 @@
     </ClInclude>
     <ClInclude Include="src\game\CharacterController.h">
       <Filter>headers\game</Filter>
+    </ClInclude>
+    <ClInclude Include="src\math\physics2f.h">
+      <Filter>headers\math</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -217,7 +220,7 @@
     </Filter>
     <Filter Include="src\game\levels">
       <UniqueIdentifier>{a87487fe-5f97-40a2-8246-24f51f1c0e3f}</UniqueIdentifier>
-	</Filter>
+    </Filter>
     <Filter Include="headers\core\input">
       <UniqueIdentifier>{53d67b7f-c0d0-4fb2-9d33-8114626bc65c}</UniqueIdentifier>
     </Filter>

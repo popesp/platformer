@@ -1,6 +1,9 @@
 #pragma once
+
+
 #include "GameScreen.h"
-#include "../render/Sprite.h"
+#include	"Player.h"
+
 
 class PlayScreen :	public GameScreen
 {
@@ -10,6 +13,6 @@ public:
 	void render();
 	void update();
 
-	Sprite* sprite;
+	Player* player;
 };
 

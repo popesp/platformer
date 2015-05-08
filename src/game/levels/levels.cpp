@@ -93,18 +93,18 @@ void Level::updateTransform()
 }
 
 
+vec2f* Level::getSpawn()
+{
+	return &spawn;
+}
+
+
 LevelManager* LevelManager::getInstance()
 {
 	if (!instance)
 		instance = new LevelManager();
 
 	return instance;
-}
-
-
-void LevelManager::render(unsigned levelIndex)
-{
-	Renderer::getInstance()->render(levels[levelIndex]);
 }
 
 
