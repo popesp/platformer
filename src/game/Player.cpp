@@ -14,7 +14,7 @@ Player::Player(unsigned levelIndex)
 	vec2f_copy(pos, *LevelManager::getInstance()->levels[levelIndex]->getSpawn());
 	vec2f_copy(old, pos);
 
-	vec2f_set(acc, 0.f, 0.5f);
+	vec2f_set(acc, 0.f, 0.25f);
 
 	vec2f dim = {PLAYER_WIDTH, PLAYER_HEIGHT};
 	sprite = new Sprite(pos, dim, "res/images/player.png");
@@ -29,10 +29,9 @@ unsigned Player::getLevel()
 
 void Player::update()
 {
-	verlet2f(pos, old, acc);
+	// update player with verlet integration
+	physics2f_verlet(pos, old, acc);
 	vec2f_copy(sprite->pos, pos);
-
-	printf("%f\n", pos[Y]);
 }
 
 void Player::render()
