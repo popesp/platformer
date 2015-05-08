@@ -77,6 +77,26 @@ static void vec2f_subtract(vec2f v0, vec2f v1)
 	vec2f_subtractn(v0, v0, v1);
 }
 
+/*	multiply vector with other vector (new)
+param:	res			resultant vector
+param:	v0			vector multiplicand
+param:	v1			vector multiplier
+*/
+static void vec2f_multiplyn(vec2f res, vec2f v0, vec2f v1)
+{
+	res[X] = v0[X] * v1[X];
+	res[Y] = v0[Y] * v1[Y];
+}
+
+/*	multiply vector with other vector
+param:	v0			vector multiplicand
+param:	v1			vector multiplier
+*/
+static void vec2f_multiply(vec2f v0, vec2f v1)
+{
+	vec2f_multiplyn(v0, v0, v1);
+}
+
 
 /*	vector dot product
 	param:	v0			first vector
