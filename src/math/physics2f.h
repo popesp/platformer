@@ -7,12 +7,17 @@
 #define	PHYSICSF_INC						0.001f
 
 
-static void physics2f_verlet(vec2f pos, vec2f old, vec2f acc)
+static void physics2f_verlet(vec2f pos, vec2f old, vec2f acc, vec2f damping)
 {
 	vec2f v;
 
+	// find velocity
 	vec2f_subtractn(v, pos, old);
+	vec2f_multiply(v, damping);
+
 	vec2f_copy(old, pos);
+
+	// update position
 	vec2f_add(pos, v);
 	vec2f_add(pos, acc);
 }
@@ -70,7 +75,6 @@ static unsigned physics2f_detect_AABB_line(vec2f topleft, vec2f botright, vec2f 
 {
 	vec2f center, half, diff, invline, halfdir;
 	vec2f min, max;
-	unsigned i;
 
 	// center of box
 	vec2f_addn(center, topleft, botright);

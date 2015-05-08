@@ -3,8 +3,8 @@
 #define	GAME_TITLE							"Platformer"
 #define	GAME_VERSION						"0.0.1"
 
-#define	GAME_DEFAULT_WIDTH					1280
-#define	GAME_DEFAULT_HEIGHT					800
+#define	GAME_DEFAULT_WIDTH					960
+#define	GAME_DEFAULT_HEIGHT					540
 
 #define	GAME_UPS							60
 #define	GAME_SPU							(1. / (double)GAME_UPS)

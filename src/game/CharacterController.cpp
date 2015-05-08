@@ -46,10 +46,8 @@ void CharacterController::handleKeyEvent(KeyEvent* keyEvent)
 
 void CharacterController::update()
 {
-	vec2f accR = { player->moveSpeed, 0 };
-	vec2f accL = { -player->moveSpeed, 0 };
 	if (moveRight)
-		vec2f_add(player->acc, accR);
-	else if (moveLeft)
-		vec2f_add(player->acc, accL);
+		player->old[X] -= player->moveSpeed;
+	if (moveLeft)
+		player->old[X] += player->moveSpeed;
 }
