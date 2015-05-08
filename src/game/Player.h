@@ -23,6 +23,7 @@ private:
 	vec2f pos;
 	vec2f old;
 	vec2f acc;
+	float moveSpeed;
 
 	unsigned levelIndex;
 	Sprite* sprite;

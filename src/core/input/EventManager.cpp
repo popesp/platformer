@@ -1,22 +1,48 @@
 #include "EventManager.h"
-std::vector<EventListener*> EventManager::listeners;
 std::vector<Event*> EventManager::events;
+std::map<Event::Type, std::vector<EventListener*>> EventManager::subscriptions;
 
-void EventManager::subscribe(EventListener* listener)
+void EventManager::subscribe(EventListener* listener, std::vector<Event::Type> events)
 {
-	listeners.push_back(listener);
+	//for each event type add the listener to the corrisponding list 
+	for (unsigned i = 0; i < events.size(); ++i)
+	{
+		Event::Type type = events[i];		
+		auto subs = subscriptions.find(type);
+
+		// check if event type exists and add listner to list
+		if (subs != std::end(subscriptions))
+		{
+			if (std::find(subs->second.begin(), subs->second.end(), listener) != std::end(subs->second))
+				subs->second.push_back(listener);
+			else
+				;// listener already subscribed
+		}
+		// event type does not exist yet
+		else 
+		{
+			std::vector<EventListener*> listeners;
+			listeners.push_back(listener);
+			subscriptions.insert(std::pair<Event::Type, std::vector<EventListener*>>(type, listeners));
+		}
+	}
 }
 
 void EventManager::unsubscribe(EventListener* listener)
 {
-	listeners.erase(std::find(listeners.begin(), listeners.end(), listener));
+	//listeners.erase(std::find(listeners.begin(), listeners.end(), listener));
 }
 
 void EventManager::notify()
 {	
-	for (unsigned i = 0; i < listeners.size(); ++i)
-		for (unsigned j = 0; j < events.size(); ++j)
-			listeners[i]->notify(events[j]);
+	for (unsigned i = 0; i < events.size(); ++i)
+	{
+		Event* event = events[i];
+		std::vector<EventListener*> subscribers = subscriptions[event->getType()];
+
+		for (unsigned j = 0; j < subscribers.size(); ++j)
+			subscribers[j]->notify(event);
+	}
 	events.clear();
 }
 

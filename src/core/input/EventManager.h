@@ -1,6 +1,7 @@
 #pragma once
 #include <vector>
-#include	<GLFW/glfw3.h>
+#include <GLFW/glfw3.h>
+#include <map>
 #include "../input/EventListener.h"
 #include "../input/Event.h"
 #include "../input/KeyEvent.h"
@@ -10,13 +11,13 @@ class EventManager
 public:
 	friend class Window;
 
-	static void subscribe(EventListener* listener);
+	static void subscribe(EventListener* listener, std::vector<Event::Type> events);
 	static void unsubscribe(EventListener* listener);
 	static void notify();
 	static void poll();
 
 private:
-	static std::vector<EventListener*> listeners;
+	static std::map<Event::Type, std::vector<EventListener*>> subscriptions;
 	static std::vector<Event*> events;
 
 	EventManager();

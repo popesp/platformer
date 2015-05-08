@@ -20,6 +20,7 @@ Player::Player(unsigned levelIndex)
 	sprite = new Sprite(pos, dim, "res/images/player.png");
 
 	controller = new CharacterController(this);
+	moveSpeed = 1.f;
 }
 
 

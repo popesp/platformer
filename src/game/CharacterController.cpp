@@ -9,7 +9,10 @@ CharacterController::CharacterController()
 CharacterController::CharacterController(Player* player)
 {
 	this->player = player;
-	EventManager::subscribe(this);
+
+	std::vector<Event::Type> events;
+	events.push_back(Event::Type::KEY_EVENT);
+	EventManager::subscribe(this, events);
 }
 
 CharacterController::~CharacterController()
@@ -19,9 +22,8 @@ CharacterController::~CharacterController()
 
 void CharacterController::notify(Event* event)
 {
-	KeyEvent* keyEvent = dynamic_cast<KeyEvent*> (event);
-	if (keyEvent != NULL)
-		handleKeyEvent(keyEvent);
+	if (event->getType() == Event::KEY_EVENT)
+		handleKeyEvent((KeyEvent*) event);
 }
 
 void CharacterController::handleKeyEvent(KeyEvent* keyEvent)
@@ -44,8 +46,8 @@ void CharacterController::handleKeyEvent(KeyEvent* keyEvent)
 
 void CharacterController::update()
 {
-	vec2f accR = { 1, 0 };
-	vec2f accL = { -1, 0 };
+	vec2f accR = { player->moveSpeed, 0 };
+	vec2f accL = { -player->moveSpeed, 0 };
 	if (moveRight)
 		vec2f_add(player->acc, accR);
 	else if (moveLeft)
