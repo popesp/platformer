@@ -18,6 +18,8 @@ Player::Player(unsigned levelIndex)
 
 	vec2f dim = {PLAYER_WIDTH, PLAYER_HEIGHT};
 	sprite = new Sprite(pos, dim, "res/images/player.png");
+
+	controller = new CharacterController(this);
 }
 
 
@@ -28,10 +30,13 @@ unsigned Player::getLevel()
 
 
 void Player::update()
-{
+{	
+	controller->update();
+	
 	// update player with verlet integration
 	physics2f_verlet(pos, old, acc);
 	vec2f_copy(sprite->pos, pos);
+	vec2f_set(acc, 0, 0);
 }
 
 void Player::render()

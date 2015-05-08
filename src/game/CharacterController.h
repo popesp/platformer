@@ -3,12 +3,8 @@
 
 #include "../core/input/EventListener.h"
 #include"../core/input/EventManager.h"
-#include "Player.h"
-
 
 class Player;
-
-
 class CharacterController : public EventListener
 {
 public:
@@ -16,7 +12,8 @@ public:
 	CharacterController(Player* player);
 	~CharacterController();
 	void notify(Event* event);
-	//void update(float deltaTime);
+	void update();
+	void handleKeyEvent(KeyEvent* keyEvent);
 
 private:
 	Player* player;

@@ -74,7 +74,6 @@ void ScreenManager::render()
 	currentScreen->render();
 }
 
-
 ScreenManager::ScreenManager()
 {
 

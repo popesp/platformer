@@ -5,12 +5,13 @@
 #include "../render/Sprite.h"
 #include "../core/geometry/Shape.h"
 #include "../core/geometry/Rectangle.h"
-#include "CharacterController.h"
-
+#include "../game/CharacterController.h"
 
 class Player
 {
 public:
+	friend CharacterController;
+
 	Player(unsigned levelIndex);
 
 	unsigned getLevel();
@@ -24,6 +25,6 @@ private:
 	vec2f acc;
 
 	unsigned levelIndex;
-
 	Sprite* sprite;
+	CharacterController* controller;
 };

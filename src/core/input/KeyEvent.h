@@ -5,10 +5,10 @@ class KeyEvent : public Event
 public:
 	KeyEvent(int key, int scancode, int action, int mods);
 	~KeyEvent();
-private:
-	int key;
-	int scancode;
-	int action;
-	int mods;
+
+	const int key;
+	const int scancode;
+	const int action;
+	const int mods;
 };
 
