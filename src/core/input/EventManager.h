@@ -12,7 +12,7 @@ public:
 	friend class Window;
 
 	static void subscribe(EventListener* listener, std::vector<Event::Type> events);
-	static void unsubscribe(EventListener* listener);
+	static void unsubscribe(EventListener* listener, std::vector<Event::Type> events);
 	static void notify();
 	static void poll();
 

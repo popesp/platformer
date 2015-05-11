@@ -28,9 +28,19 @@ void EventManager::subscribe(EventListener* listener, std::vector<Event::Type> e
 	}
 }
 
-void EventManager::unsubscribe(EventListener* listener)
+void EventManager::unsubscribe(EventListener* listener, std::vector<Event::Type> events)
 {
-	//listeners.erase(std::find(listeners.begin(), listeners.end(), listener));
+	for (unsigned i = 0; i < events.size(); ++i)
+	{
+		Event::Type eventType = events[i];
+		std::vector<EventListener*> subscribers = subscriptions[eventType];
+		auto element = std::find(subscribers.begin(), subscribers.end(), listener);
+
+		if (element != std::end(subscribers))
+			subscriptions[eventType].erase(element);
+		else
+			;// listener not in the list?
+	}
 }
 
 void EventManager::notify()

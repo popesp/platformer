@@ -34,6 +34,8 @@ void CharacterController::handleKeyEvent(KeyEvent* keyEvent)
 			moveLeft = true;
 		else if (keyEvent->key == GLFW_KEY_D)
 			moveRight = true;
+		else if (keyEvent->key == GLFW_KEY_SPACE)
+			jumping = true;
 	}
 	else if (keyEvent->action == GLFW_RELEASE)
 	{
@@ -50,4 +52,9 @@ void CharacterController::update()
 		player->old[X] -= player->moveSpeed;
 	if (moveLeft)
 		player->old[X] += player->moveSpeed;
+	if (jumping)
+	{
+		player->old[Y] += player->moveSpeed;
+		jumping = false;
+	}
 }
